@@ -1,0 +1,11 @@
+<div class="custom-card row justify-content-around p-2 ">
+    <select class="form-select col-md-3"
+        style="width: 10rem;height: 2.5rem ;position: absolute;top:10px;left:10px ;z-index: 100;" [(ngModel)]="selected"
+        (ngModelChange)="changeChart()" aria-label="Default select example">
+        <option value="monthly" selected>شهري</option>
+        <option value="yearly">سنوي</option>
+
+    </select>
+
+    <div #chart class="chartStyle"></div>
+</div>

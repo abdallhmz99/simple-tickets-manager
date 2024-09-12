@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: 'Neo Sans Arabic';
+    src: url('assets/fonts/Neo\ Sans\ Arabic\ Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+    box-sizing: border-box;
+    border: none;
+    
+}
+p{font-size: small;}
+body{
+    background-color: rgb(243,245,247);
+    font-family:'Neo Sans Arabic' !important;
+ }
+
+ .h-45{height: 45%;}
+
+.rtl{ direction:rtl;}
+.ltr{direction:ltr;}
+
+

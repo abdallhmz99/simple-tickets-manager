@@ -1,0 +1,39 @@
+<p-table dir="rtl" class="rounded" [paginator]="true" [rows]="3" [rowsPerPageOptions]="[3,6,10,15,20]"
+    [value]="showendata">
+    <ng-template pTemplate="caption">
+        <div class="flex align-items-center justify-content-between " style="height: 30px;">
+            <input type="text" placeholder="ابحث بالاسم" pInputText [(ngModel)]="search"
+                (ngModelChange)="onSearch($event)" style="border-color: #8A74F9; border-style: solid;height: 25px;" />
+
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr class="text-center font">
+            <th> المستخدم</th>
+            <th>رقم التذكرة</th>
+            <th pSortableColumn="tikPrice"> <p-sortIcon field="tikPrice" /> قيمة التذكرة </th>
+            <th>السنيمات</th>
+            <th>عدد الاشخاص</th>
+            <th>عدد مرات الشراء</th>
+            <th>التذكرة</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-ticket>
+        <tr>
+            <td class="text-center font d-flex align-items-center justify-content-around "> <img
+                    style="width: 65px;height: 50px;" [src]="baseIamgeUrl+ticket.userImg"
+                    class="rounded-circle float-left" alt="...">
+                {{ticket.user}}</td>
+            <td class="text-center font">{{ticket.ticNo}}</td>
+            <td class="text-center font">{{ticket.tikPrice | currency:'USD'}}</td>
+            <td class="text-center font">{{ticket.cinemas}}</td>
+            <td class="text-center font">{{ticket.noOfPeople}}</td>
+            <td class="text-center font">{{ticket.noOfBuy}}</td>
+            <td class="text-center font">{{ticket.tic.name}}
+                <button (click)="save(ticket.tic.name,ticket.tic.url)" type="button" style="width: 65px;height: 30px;"
+                    class="btn btn-link">حفظ</button>
+
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
